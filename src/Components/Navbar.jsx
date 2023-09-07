@@ -1,12 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import '../Components/Navbar.css';
 import {Link} from 'react-router-dom';
 import {AiOutlineSearch} from 'react-icons/ai';
 import{BsCart2} from 'react-icons/bs';
 import{RxPerson} from 'react-icons/rx';
+import Login from './Login'
+
 
 const Navbar = () => {
+  const [seen, setSeen] = useState(false)
 
+    function togglePop () {
+        setSeen(!seen);
+    };
   return (
     <>
     <div className=" header">
@@ -66,7 +72,10 @@ const Navbar = () => {
       <div className="forth-div">
        <h1>NEW AND TRENDING</h1>
        <p>LEVEL UP YOUR STYLE GAME</p>
-       <button>SHOP NOW</button>
+       <div>
+            <button onClick={togglePop}>SHOP NOW</button>
+            {seen ? <Login toggle={togglePop} /> : null}
+        </div>
       </div>
     </div>
     <div className="navbar-forth">
@@ -80,7 +89,6 @@ const Navbar = () => {
         <img src="https://arcticfox.com/cdn/shop/files/Artboard54_620x.png?v=1692788231" alt="" />
       </div>
     </div>
-
      
     </>
   )
