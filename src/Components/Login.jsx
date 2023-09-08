@@ -12,8 +12,16 @@ function Login(props) {
   }
 
   return <>
-      <div className="popup">
+            <div className='main-container'>
+           <div className='img'>
+            <img src={require('./image1.png')}  alt=""/>
+            </div>
+            <div className='container-2'>
+         
+          <div className="popup">
           <div className="popup-inner">
+         
+           
               <h2 className='login-tag'>Welcome Back!</h2>
               <h3 className='login-page'>Login to Continue</h3>
               <form onSubmit={handleLogin}>
@@ -34,6 +42,8 @@ function Login(props) {
               </form>
             
           </div>
+      </div>
+      </div>
       </div>
       </>
 } export default Login
