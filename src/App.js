@@ -4,7 +4,7 @@ import HomePage from "./Components/HomePage";
 import Contact  from "./Components/Contact";
 import {Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer";
-// import Signup from "./Components/Login";
+import Products from "./Components/Products";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<HomePage />} />
+          <Route  path='/product' element={<Products />} />
           <Route  path='/Contact' element={<Contact />} />
-          {/* <Route  path='/signup' element={<Signup />} /> */}
           </Routes>
       <Footer/>
         

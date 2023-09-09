@@ -1,15 +1,20 @@
 import React,{useState} from 'react';
 import '../Components/Login.css';
+import{Link} from 'react-router-dom';
+import Signup from './Signup';
 
 function Login(props) {
+  console.log(props,"props")
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-
+  const [openReg,setOpenReg]=useState(false)
   function handleLogin(e) {
       e.preventDefault()
-      // Code to handle login goes here
       props.toggle()
   }
+  function togglePop () {
+    setOpenReg(!openReg);
+};
 
   return <>
             <div className='main-container'>
@@ -17,11 +22,12 @@ function Login(props) {
             <img src={require('./image1.png')}  alt=""/>
             </div>
             <div className='container-2'>
-         
-          <div className="popup">
-          <div className="popup-inner">
-         
-           
+          <div className="popup-inner ">
+          <div className='login-main'>
+          
+           <div className='nav-link'>Already a User? <div onClick={togglePop}>Sign Up</div> </div>  
+            {openReg ? <Signup toggle={togglePop} /> : null}
+           </div>
               <h2 className='login-tag'>Welcome Back!</h2>
               <h3 className='login-page'>Login to Continue</h3>
               <form onSubmit={handleLogin}>
@@ -42,7 +48,6 @@ function Login(props) {
               </form>
             
           </div>
-      </div>
       </div>
       </div>
       </>
