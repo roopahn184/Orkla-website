@@ -1,6 +1,30 @@
-.toggle-container{
-    margin-top: -70px;
+.checkout-page{
+    margin-top:0;
     width: 100%;
     height: 100%;
+}
+.checkout-headers{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 46px;
+   justify-content: space-around;
+   padding:6px;
+}
+.ship-add{
+    white-space: nowrap;
+    padding: 2px;
+   border-color: brown;
+   color: brown;
+   border-radius:6px;
+   background-color: #fff;
+}
+.ship-add:hover{
+    background-color: brown;
+    color: #fff;
+}
+.checkout-body{
    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }

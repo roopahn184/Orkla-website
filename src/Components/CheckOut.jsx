@@ -1,24 +1,53 @@
 import React,{useState} from 'react';
 import '../Components/CheckOut.css';
 import CheckoutPage from './CheckoutPage'; 
+import CheckoutProduct from './CheckoutProduct';
+import TrackOrder from './TrackOrder';
 
  function CheckOut(){
 
-  const [openReg,setOpenReg]=useState(false)
+  const [openReg,setOpenReg]=useState(false);
+  const[openTrack, setOpenTrack] = useState(false);
+
+  function trackingPop(){
+   setOpenTrack(!openTrack)
+  }
 
   function shoppingPop(){
     setOpenReg(!openReg);
   }  
   return <>
-  <div className='toggle-container'>
-   <div className='sub-toggle b'>
+  <div className='checkout-page '>
+   <div className='checkout-headers '>
   
-        <button className='cart-container b'>Shopping Cart</button>
-        <button onClick={shoppingPop}  className='cart-container'>Shopping & Checkout</button>
-        {openReg ? <CheckoutPage toggle={shoppingPop} /> : null}
+        <button className="ship-add" >Shopping Cart</button>
+        <button onClick={shoppingPop} className="ship-add"  >Shopping & Checkout</button>
+        <button  className="ship-add" onClick={trackingPop}>Track Order</button>
+  
+  </div>
+  <div className='checkout-body '>
+  {openReg ? 
+  (
+    <>
+    <CheckoutPage toggle={shoppingPop} /> 
+    <CheckoutProduct/>
+ 
+   </> 
+  ):null
+  }
+  <div className='checkout-body '>
+  {openTrack ? 
+  (
+    <>
+     <TrackOrder toggle={trackingPop} /> 
+ 
+   </> 
+  ):null
+  }
+ </div>
 
-        <button  className='cart-container' >Track Order</button>
-  
+    <div>
+  </div>
   </div>
   </div>
   </>

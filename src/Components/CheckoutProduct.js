@@ -1,20 +1,15 @@
 import React ,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Components/Products.css';
-import CheckOut from './CheckOut';
-import HomePage from './HomePage';
-
-const Products = (props) => {
+import '../Components/CheckoutProduct.css'
+const CheckoutProduct = (props) => {
   const navigate = useNavigate();
     const [openReg,setOpenReg]=useState(false)
     function checkOutToggle () {
-        // setOpenReg(!openReg);
-        navigate('/checkout');
+        navigate('/Checkout');
     };
-  return (
-       <div className='product-container-1'>
-        <div className='sub-product'>
-            <div className='product-container-2'>
+  return <>
+  <div>
+         <div>
           <div className='product-img'>
         <img src="https://media.istockphoto.com/id/1215542092/photo/portrait-of-smiling-young-man-in-a-white-t-shirt-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=pxfrgImIf__D9yQJjgfJ1HGSeGjPwQoD3sAa-iWz0JU=" alt=""  height="100%" width="80%"/>
       </div>
@@ -43,9 +38,18 @@ const Products = (props) => {
         <h2 className='h1-tag'>Pickup</h2>
         <p className='h1-tag'>Find a Store</p>
         <hr />
+          <p>Summary</p>
+          <div className='card-content'>
+          <div className='card-btn-1'>
+          <button>Gift card or discount code</button>
+          </div>
+          <div  className='card-btn-2'>
+          <button>Apply</button>
+          </div>
+          </div>
         <div className='sub-poduct-container'>
         <div> 
-        <p className='h1-tag'>Subttal</p>
+        <p className='h1-tag'>Subtotal</p>
         <p className='h1-tag'>Estimated shipping & handling</p>
         <p className='h1-tag'>Estimated Tax</p>
         </div>
@@ -67,17 +71,13 @@ const Products = (props) => {
         <div className='button-tagle'>
         <div>Continue Sopping</div>
         <div>
-        <button className='check-box' onClick={checkOutToggle} >Checkout</button>  
-            {/* {openReg ? <CheckOut toggle={checkOutToggle}  /> : null} */}
+        <button className='check-box' onClick={checkOutToggle} >Cash on Delivery</button>   
         </div>
         </div>
         
         </div>
-
-      </div>
-      </div>
-      
-  )
+        </div>
+  </>
 }
 
-export default Products
+export default CheckoutProduct

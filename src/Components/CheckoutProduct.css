@@ -1,27 +1,19 @@
-.product-container-1{
-    /* position: fixed; */
-    /* z-index: 1; */
-    left:0;
-    top: 0;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    margin-top: 50px;
+.card-btn-1 button{
+    color:brown;
+    padding: 5px;
+    border-color: brown;
 }
-.sub-product{
-    background-color:#ffffff;
-    position:absolute;
-    left:70%;
-    top: 75%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 10px 10px 10px 10px rgba(46, 45, 45, 0.75);
-    width: 35%;
-    height: 110%;
-    margin-left: 90px;
-    margin-top: 60px;
-    border-radius: 20px;
+.card-btn-2 button{
+    color: #fff;
+    background-color: brown;
+    padding: 5px;
+    margin-left:20px;
 }
+.card-content{
+    display: flex;
+    justify-content: space-between;
+}
+
 .product-container-2{
     display: flex;
     flex-direction: row;
