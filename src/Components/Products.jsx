@@ -2,13 +2,11 @@ import React ,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Components/Products.css';
 import CheckOut from './CheckOut';
-import HomePage from './HomePage';
 
 const Products = (props) => {
   const navigate = useNavigate();
     const [openReg,setOpenReg]=useState(false)
     function checkOutToggle () {
-        // setOpenReg(!openReg);
         navigate('/checkout');
     };
   return (
@@ -68,12 +66,11 @@ const Products = (props) => {
         <div>Continue Sopping</div>
         <div>
         <button className='check-box' onClick={checkOutToggle} >Checkout</button>  
-            {/* {openReg ? <CheckOut toggle={checkOutToggle}  /> : null} */}
         </div>
         </div>
         
         </div>
-
+ 
       </div>
       </div>
       
