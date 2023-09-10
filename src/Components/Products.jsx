@@ -1,11 +1,14 @@
 import React ,{useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Components/Products.css';
-import Contact from './Contact';
+import CheckOut from './CheckOut';
 
 const Products = (props) => {
+  const navigate = useNavigate();
     const [openReg,setOpenReg]=useState(false)
     function checkOutToggle () {
-        setOpenReg(!openReg);
+        // setOpenReg(!openReg);
+        navigate('/checkout');
     };
   return (
        <div className='product-container-1'>
@@ -63,8 +66,8 @@ const Products = (props) => {
         <div className='button-tagle'>
         <div>Continue Sopping</div>
         <div>
-        <button className='check-box' onClick={checkOutToggle}>Checkout</button>  
-            {openReg ? <Contact toggle={checkOutToggle} /> : null}
+        <button className='check-box' onClick={checkOutToggle} >Checkout</button>  
+            {/* {openReg ? <CheckOut toggle={checkOutToggle}  /> : null} */}
         </div>
         </div>
         

@@ -6,7 +6,6 @@ import '../Components/Signup.css';
 
     function handleSignin(e) {
         e.preventDefault()
-        // Code to handle login goes here
         props.toggle()
     }
 

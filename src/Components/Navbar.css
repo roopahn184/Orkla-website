@@ -1,4 +1,4 @@
-.main-div{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 }
 .nav-bar {
   height: 120px;
-width: 100%;
+ width: 100%;
 background-color: white;
 display: flex;
 flex-direction: row;
@@ -191,7 +191,7 @@ h2{
 .sixth-div{
   padding: 20px;
 }
-input{
+.input-item{
   width: 400px;
   height: 30px;
   margin-top: 20px;
